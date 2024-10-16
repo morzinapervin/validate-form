@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<main>
+  <div id="fp-stepper-container">
+    <div class="fp-stepper-cell active">
+        <div class="fp-stepper-step">
+            <span class="fp-stepper-number">1</span> <span class="fp-stepper-label">Keystone Login</span><hr>
+        </div>
+    </div>
+    <div class="fp-stepper-cell ">
+        <div class="fp-stepper-step">
+            <span class="fp-stepper-number">2</span> <span class="fp-stepper-label">Confirm Contact</span><hr>
+        </div>
+    </div>
+    <div class="fp-stepper-cell ">
+        <div class="fp-stepper-step">
+            <span class="fp-stepper-number">3</span> <span class="fp-stepper-label">Verify Account</span><hr>
+        </div>
+    </div>
+    <div class="fp-stepper-cell ">
+        <div class="fp-stepper-step">
+            <span class="fp-stepper-number">4</span> <span class="fp-stepper-label">WIC Family</span>
+        </div>
+    </div>
+</div>
+<div class="fp-page-intro short">
+  <div class="intro-inner">
+  <h1>Register a New Keystone Login Account</h1>
+  <p>Keystone Login is an account management system for commonwealth online services. You can use your Keystone Login username and password to log into any online service that participates in Keystone Login.</p>
+</div>
+</div>
+  <div class="wrapper">
+    
+
+
+
+    <!-- Step 1: Name, Email/Phone, Date of Birth -->
+<div id="step-1" class="step">
+    <p id="error-message" class="error-message"></p>
+    <form id="form">
+      <div>
+        <label for="firstname-input">
+        </label>
+        <input type="text" name="firstname" id="firstname-input" placeholder="Name">
+      </div>
+      <div>
+        <label for="email-input"></label>
+        <input type="email" name="email" id="email-input" placeholder="Email" required>
+        <input type="tel" name="phone" id="phone-input" placeholder="Phone Number" class="hidden" required>
+        <p id="toggle-field" style="cursor:pointer; color:blue;" onclick="toggleInput()">Use phone instead</p>
+      </div>
+      
+      <div>
+      <label for="dob" class="dob-label">Date of birth</label>
+      <p>This will not be shown publicly. Confirm your own age.</p>
+      <input type="date" id="dob" name="dob" required>
+      </div>
+    
+      <button type="submit" onclick="validateStep1()">Next</button>
+      <p>Already have an Account? <a href="login.html">login</a> </p>
+    </div>
+    </form>
+    
+    
+    <!-- Step 2: Review Name, Email/Phone, Date of Birth -->
+    <div id="step-2" class="step hidden">
+      <h2>Create Your Account</h2>
+      <p>Please review the information below and click "Sign Up" to create your account.</p>
+    
+      <form id="review-form">
+        <div>
+          <label for="review-name">Name</label>
+          <input type="text" id="review-name" readonly>
+        </div>
+        <div>
+          <label for="review-contact" id="review-contact-label">Email/Phone</label>
+          <input type="text" id="review-contact" readonly>
+        </div>
+        <div>
+          <label for="review-dob">Date of Birth</label>
+          <input type="text" id="review-dob" readonly>
+        </div>
+        <div class="btns-wrap"><button class="button-back" type="button" onclick="prevStep(1)">Back</button>
+        <button type="button" onclick="nextStep(3)">Sign Up</button></div>
+
+      </form>
+    
+      <!-- <div class="captcha">
+        <p>Please complete the CAPTCHA to prove you're human.</p>
+   
+      </div> -->
+    </div>
+    
+
+
+<!-- Step 3: We Sent You a Code -->
+<div id="step-3" class="step hidden">
+  <p id="verificaion-error-message" class="error-message"></p>
+  <form id="verification-form">
+    <h2>Verification Code</h2>
+    <p id="verification-message">We sent a code to your email. Please enter it below.</p>
+    <input type="text" id="verification-code" placeholder="Enter your code" required>
+    <button type="button" onclick="validateVerificationCode()">Next</button>
+    <button class="button-back" type="button" onclick="prevStep(2)">Don't receive code?</button>
+  </form>
+</div>
+
+
+
+
+<!-- Step 4: Password Setup -->
+<div id="step-4" class="step hidden">
+  <p id="password-error-message" class="error-message"></p> <!-- Error message will be displayed here -->
+  <form id="password-form">
+    <h2>You'll need a password</h2>
+    <p>Make sure it's 8 characters or more.</p>
+    <input type="password" id="password" required>
+    <button type="button" onclick="validatePassword()">Next</button>
+  </form>
+</div>
+
+  
+
+</div> 
+</div>
+</main>
+<script type="text/javascript" src="validation.js" defer></script>
+</body>
+</html>

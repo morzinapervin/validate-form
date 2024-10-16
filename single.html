@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <link rel="stylesheet" href="single-profile.css">
+
+</head>
+<body>
+  <div class="profile-container">
+    <!-- Left Column for Profile Pic and Username -->
+    <div class="left-column">
+      <img id="profile-pic" src="blank-profile-picture.png" alt="Profile Picture">
+      <div class="editable-username" id="display-username">JohnDoe</div>
+      <input type="text" id="username-input" placeholder="Enter username">
+      <button class="edit-username-btn" id="edit-username-btn">Edit Username</button>
+      <button class="save-username-btn" id="save-username-btn">Save</button>
+    </div>
+
+    <!-- Right Column for user information -->
+    <div class="right-column">
+      <h3>User Information</h3>
+      <div class="info-item">
+        <label for="review-name">Name:</label>
+        <span id="review-name">John Doe</span>
+      </div>
+      <div class="info-item">
+        <label for="review-dob">Date of Birth:</label>
+        <span id="review-dob">01/01/1990</span>
+      </div>
+      <div class="info-item">
+        <label for="review-contact">Email/Phone:</label>
+        <span id="review-contact">johndoe@example.com</span>
+      </div>
+      <div class="info-item">
+        <label for="review-password">Password:</label>
+        <span id="review-password">********</span>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="single-profile.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!-- profile.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Page</title>
+  <link rel="stylesheet" href="profile-styles.css">
+</head>
+<body>
+<!-- profile.html -->
+<div class="profile-container" id="userpic-popup">
+  <h2>Select a profile picture</h2>
+  <p>Have a favorite selfie? Upload it now.</p>
+
+  <div class="profile-pic-section">
+    <img id="profile-pic" src="blank-profile-picture.png" alt="Profile Picture">
+    <input type="file" id="profile-pic-input" accept="image/*">
+  </div>
+
+  <button class="save-btn" id="save-btn">Save Profile</button>
+
+  <!-- Skip for Now link -->
+  <p class="skip-text" id="skip-text" onclick="openUsernamePopup()">Skip for Now</p>
+</div>
+
+<!-- Popup for Username -->
+<div class="username-popup hidden" id="username-popup">
+  <p id="username-error-message" class="error-message"></p> 
+  <div class="popup-content">
+    <h2>What should we call you?</h2>
+    <p>Your @username is unique. You can always change it later.</p>
+    <input type="text" id="username-input" placeholder="Enter your username" required>
+    <button type="button" onclick="validateUsername()">Next</button>
+  </div>
+</div>
+
+
+
+  <script src="profile-scripts.js"></script>
+</body>
+</html>
